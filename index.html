@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧建筑系统 - 3D交互式布线图</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 粒子效果系统 -->
+    <div class="particle-system" id="particleSystem"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1>🏢 智慧建筑系统布线图</h1>
+            <p>点击任意设备查看详细信息和技术参数</p>
+        </header>
+
+        <div class="building-container">
+            <div class="building">
+                <div class="building-main">
+                    <!-- 垂直线槽系统 -->
+                    <div class="vertical-conduit">
+                        <div class="conduit-section"></div>
+                        <div class="conduit-section"></div>
+                        <div class="conduit-section"></div>
+                        <div class="conduit-section"></div>
+                    </div>
+                    
+                    <!-- 主干布线 -->
+                    <div class="main-wiring">
+                        <div class="vertical-wire blue-wire"></div>
+                        <div class="vertical-wire green-wire"></div>
+                        <div class="vertical-wire yellow-wire"></div>
+                        <div class="vertical-wire purple-wire"></div>
+                        <div class="vertical-wire red-wire"></div>
+                    </div>
+
+                    <!-- 4F -->
+                    <div class="floor" data-floor="4F">
+                        <div class="floor-label">4F</div>
+                        <div class="wiring-system">
+                            <div class="wire blue-line"></div>
+                            <div class="wire green-line"></div>
+                            <div class="wire yellow-line"></div>
+                            <div class="wire purple-line"></div>
+                            <div class="wire red-line"></div>
+                            <div class="wire red-dashed-line"></div>
+                        </div>
+                        <div class="floor-content">
+                            <!-- 左侧摄像头 -->
+                            <div class="device camera-device" data-device="camera-4f-left" style="left: 30px; top: 40px;">
+                                <div class="camera-body blue-device">
+                                    <div class="camera-lens"></div>
+                                    <div class="camera-bracket"></div>
+                                </div>
+                                <div class="device-label">摄像头</div>
+                            </div>
+                            
+                            <!-- 蓝色控制器 -->
+                            <div class="device controller-device" data-device="controller-4f" style="left: 120px; top: 50px;">
+                                <div class="cube-device blue-device">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                </div>
+                                <div class="device-label">控制器</div>
+                            </div>
+                            
+                            <!-- 绿色圆柱设备 -->
+                            <div class="device sensor-device" data-device="sensor-4f-green" style="left: 200px; top: 45px;">
+                                <div class="cylinder-device green-device">
+                                    <div class="top-circle"></div>
+                                    <div class="side"></div>
+                                </div>
+                                <div class="device-label">声光报警器</div>
+                            </div>
+                            
+                            <!-- 紫色圆柱设备 -->
+                            <div class="device alarm-device" data-device="alarm-4f" style="left: 260px; top: 45px;">
+                                <div class="cylinder-device purple-device">
+                                    <div class="top-circle"></div>
+                                    <div class="side"></div>
+                                </div>
+                                <div class="device-label">手动报警</div>
+                            </div>
+                            
+                            <!-- 橙色立方体 -->
+                            <div class="device control-device" data-device="control-4f" style="left: 320px; top: 50px;">
+                                <div class="cube-device orange-device">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                </div>
+                                <div class="device-label">控制模块</div>
+                            </div>
+                            
+                            <!-- 控制面板 -->
+                            <div class="device panel-device" data-device="panel-4f" style="left: 400px; top: 35px;">
+                                <div class="control-panel">
+                                    <div class="panel-screen"></div>
+                                    <div class="panel-frame"></div>
+                                </div>
+                                <div class="device-label">控制面板</div>
+                            </div>
+                            
+                            <!-- 右侧摄像头 -->
+                            <div class="device camera-device" data-device="camera-4f-right" style="left: 480px; top: 40px;">
+                                <div class="camera-body blue-device">
+                                    <div class="camera-lens"></div>
+                                    <div class="camera-bracket"></div>
+                                </div>
+                                <div class="device-label">摄像头</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3F -->
+                    <div class="floor" data-floor="3F">
+                        <div class="floor-label">3F</div>
+                        <div class="wiring-system">
+                            <div class="wire blue-line"></div>
+                            <div class="wire green-line"></div>
+                            <div class="wire yellow-line"></div>
+                            <div class="wire purple-line"></div>
+                            <div class="wire red-line"></div>
+                            <div class="wire red-dashed-line"></div>
+                        </div>
+                        <div class="floor-content">
+                            <!-- 重复4F的设备布局，但使用不同的ID -->
+                            <div class="device camera-device" data-device="camera-3f-left" style="left: 30px; top: 40px;">
+                                <div class="camera-body blue-device">
+                                    <div class="camera-lens"></div>
+                                    <div class="camera-bracket"></div>
+                                </div>
+                                <div class="device-label">摄像头</div>
+                            </div>
+                            
+                            <div class="device controller-device" data-device="controller-3f" style="left: 120px; top: 50px;">
+                                <div class="cube-device blue-device">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                </div>
+                                <div class="device-label">控制器</div>
+                            </div>
+                            
+                            <div class="device sensor-device" data-device="sensor-3f-green" style="left: 200px; top: 45px;">
+                                <div class="cylinder-device green-device">
+                                    <div class="top-circle"></div>
+                                    <div class="side"></div>
+                                </div>
+                                <div class="device-label">声光报警器</div>
+                            </div>
+                            
+                            <div class="device alarm-device" data-device="alarm-3f" style="left: 260px; top: 45px;">
+                                <div class="cylinder-device purple-device">
+                                    <div class="top-circle"></div>
+                                    <div class="side"></div>
+                                </div>
+                                <div class="device-label">手动报警</div>
+                            </div>
+                            
+                            <div class="device control-device" data-device="control-3f" style="left: 320px; top: 50px;">
+                                <div class="cube-device orange-device">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                </div>
+                                <div class="device-label">控制模块</div>
+                            </div>
+                            
+                            <div class="device panel-device" data-device="panel-3f" style="left: 400px; top: 35px;">
+                                <div class="control-panel">
+                                    <div class="panel-screen"></div>
+                                    <div class="panel-frame"></div>
+                                </div>
+                                <div class="device-label">控制面板</div>
+                            </div>
+                            
+                            <div class="device camera-device" data-device="camera-3f-right" style="left: 480px; top: 40px;">
+                                <div class="camera-body blue-device">
+                                    <div class="camera-lens"></div>
+                                    <div class="camera-bracket"></div>
+                                </div>
+                                <div class="device-label">摄像头</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2F -->
+                    <div class="floor" data-floor="2F">
+                        <div class="floor-label">2F</div>
+                        <div class="wiring-system">
+                            <div class="wire blue-line"></div>
+                            <div class="wire green-line"></div>
+                            <div class="wire yellow-line"></div>
+                            <div class="wire purple-line"></div>
+                            <div class="wire red-line"></div>
+                            <div class="wire red-dashed-line"></div>
+                        </div>
+                        <div class="floor-content">
+                            <!-- 2F设备 -->
+                            <div class="device camera-device" data-device="camera-2f-left" style="left: 30px; top: 40px;">
+                                <div class="camera-body blue-device">
+                                    <div class="camera-lens"></div>
+                                    <div class="camera-bracket"></div>
+                                </div>
+                                <div class="device-label">摄像头</div>
+                            </div>
+                            
+                            <div class="device controller-device" data-device="controller-2f" style="left: 120px; top: 50px;">
+                                <div class="cube-device blue-device">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                </div>
+                                <div class="device-label">控制器</div>
+                            </div>
+                            
+                            <div class="device sensor-device" data-device="sensor-2f-green" style="left: 200px; top: 45px;">
+                                <div class="cylinder-device green-device">
+                                    <div class="top-circle"></div>
+                                    <div class="side"></div>
+                                </div>
+                                <div class="device-label">声光报警器</div>
+                            </div>
+                            
+                            <div class="device alarm-device" data-device="alarm-2f" style="left: 260px; top: 45px;">
+                                <div class="cylinder-device purple-device">
+                                    <div class="top-circle"></div>
+                                    <div class="side"></div>
+                                </div>
+                                <div class="device-label">手动报警</div>
+                            </div>
+                            
+                            <div class="device control-device" data-device="control-2f" style="left: 320px; top: 50px;">
+                                <div class="cube-device orange-device">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                </div>
+                                <div class="device-label">控制模块</div>
+                            </div>
+                            
+                            <div class="device panel-device" data-device="panel-2f" style="left: 400px; top: 35px;">
+                                <div class="control-panel">
+                                    <div class="panel-screen"></div>
+                                    <div class="panel-frame"></div>
+                                </div>
+                                <div class="device-label">控制面板</div>
+                            </div>
+                            
+                            <div class="device camera-device" data-device="camera-2f-right" style="left: 480px; top: 40px;">
+                                <div class="camera-body blue-device">
+                                    <div class="camera-lens"></div>
+                                    <div class="camera-bracket"></div>
+                                </div>
+                                <div class="device-label">摄像头</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1F -->
+                    <div class="floor" data-floor="1F">
+                        <div class="floor-label">1F</div>
+                        <div class="wiring-system">
+                            <div class="wire blue-line"></div>
+                            <div class="wire green-line"></div>
+                            <div class="wire yellow-line"></div>
+                            <div class="wire purple-line"></div>
+                            <div class="wire red-line"></div>
+                            <div class="wire red-dashed-line"></div>
+                        </div>
+                        <div class="floor-content">
+                            <!-- 1F特殊设备布局 -->
+                            <div class="device camera-device" data-device="camera-1f-left" style="left: 30px; top: 40px;">
+                                <div class="camera-body blue-device">
+                                    <div class="camera-lens"></div>
+                                    <div class="camera-bracket"></div>
+                                </div>
+                                <div class="device-label">摄像头</div>
+                            </div>
+                            
+                            <!-- 1F的烟感探测器 -->
+                            <div class="device smoke-detector" data-device="smoke-1f" style="left: 120px; top: 45px;">
+                                <div class="detector-device white-device">
+                                    <div class="detector-top"></div>
+                                    <div class="detector-base"></div>
+                                </div>
+                                <div class="device-label">烟感探测器</div>
+                            </div>
+                            
+                            <div class="device sensor-device" data-device="sensor-1f-green" style="left: 200px; top: 45px;">
+                                <div class="cylinder-device green-device">
+                                    <div class="top-circle"></div>
+                                    <div class="side"></div>
+                                </div>
+                                <div class="device-label">声光报警器</div>
+                            </div>
+                            
+                            <div class="device alarm-device" data-device="alarm-1f" style="left: 260px; top: 45px;">
+                                <div class="cylinder-device purple-device">
+                                    <div class="top-circle"></div>
+                                    <div class="side"></div>
+                                </div>
+                                <div class="device-label">手动报警</div>
+                            </div>
+                            
+                            <div class="device control-device" data-device="control-1f" style="left: 320px; top: 50px;">
+                                <div class="cube-device orange-device">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                </div>
+                                <div class="device-label">控制模块</div>
+                            </div>
+                            
+                            <!-- 1F的RS485模块 -->
+                            <div class="device rs485-device" data-device="rs485-1f" style="left: 380px; top: 50px;">
+                                <div class="cube-device red-device">
+                                    <div class="face front">RS485</div>
+                                    <div class="face back"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                </div>
+                                <div class="device-label">RS485模块</div>
+                            </div>
+                            
+                            <div class="device camera-device" data-device="camera-1f-right" style="left: 480px; top: 40px;">
+                                <div class="camera-body blue-device">
+                                    <div class="camera-lens"></div>
+                                    <div class="camera-bracket"></div>
+                                </div>
+                                <div class="device-label">摄像头</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 系统图例 -->
+        <div class="system-legend">
+            <h3>系统图例</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-line blue-legend"></div>
+                    <span>支测器</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line blue-legend thick"></div>
+                    <span>支RVV</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line green-legend"></div>
+                    <span>RAVV</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line green-legend thick"></div>
+                    <span>声光</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line yellow-legend"></div>
+                    <span>汽车线</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line purple-legend"></div>
+                    <span>手报</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box red-legend"></div>
+                    <span>RS485</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box red-legend-pd"></div>
+                    <span>PD</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line red-dashed"></div>
+                    <span>PD供电</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 设备信息面板 -->
+        <div class="device-info-panel" id="deviceInfoPanel">
+            <div class="info-content">
+                <button class="close-btn" id="closeInfoBtn">&times;</button>
+                <h3 id="deviceTitle">设备信息</h3>
+                <div class="device-details" id="deviceDetails">
+                    <p>点击任意设备查看详细信息</p>
+                </div>
+                <div class="device-specs" id="deviceSpecs">
+                    <!-- 技术参数将在这里显示 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

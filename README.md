@@ -1,137 +1,121 @@
-# IDE 使用问题与解决方案集 📝
+# 🏢 智慧建筑任务中心
 
-> 由 ODOkai 维护的IDE使用经验分享仓库
+一个有趣的2D网页应用，专为建筑智能化工程技术的学习而设计。通过点击不同的建筑场景来选择和探索各种智能化技术领域。
 
-[![GitHub license](https://img.shields.io/github/license/ODOkai/IDE_Useages.svg)](https://github.com/ODOkai/IDE_Useages/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/ODOkai/IDE_Useages.svg)](https://github.com/ODOkai/IDE_Useages/issues)
-[![GitHub stars](https://img.shields.io/github/stars/ODOkai/IDE_Useages.svg)](https://github.com/ODOkai/IDE_Useages/stargazers)
+## ✨ 功能特色
 
-## 🎯 项目简介
+### 🎯 场景式学习
+- **9大核心场景**: 涵盖建筑智能化的主要技术领域
+- **可视化交互**: 通过点击建筑不同区域来选择学习内容
+- **详细任务描述**: 每个场景都包含具体的学习任务和实践项目
 
-这是一个开源的IDE使用经验分享仓库，收集整理了在日常开发过程中使用各种集成开发环境（IDE）时遇到的问题及其解决方案。希望能够帮助其他开发者快速解决类似问题，提高开发效率。
+### 🏗️ 建筑场景包括
 
-## 📚 内容范围
+1. **🌤️ 太阳能与环境监测系统** (屋顶层)
+   - 绿色能源管理与环境监测
 
-本仓库涵盖但不限于以下IDE的使用经验：
+2. **🚨 消防报警系统** (6层)
+   - 火灾检测与应急处理
 
-- **代码编辑器**
-  - Visual Studio Code
-  - Sublime Text
-  - Atom
-  - Vim/NeoVim
-  
-- **集成开发环境**
-  - IntelliJ IDEA
-  - Eclipse
-  - Visual Studio
-  - Xcode
-  - Android Studio
-  
-- **在线编辑器**
-  - CodePen
-  - JSFiddle
-  - Repl.it
-  - GitHub Codespaces
+3. **📹 安防监控系统** (5层)
+   - 视频监控与访问控制
 
-## 🏗️ 仓库结构
+4. **💡 智能照明系统** (4层)
+   - 自动调光与场景控制
 
-```
-IDE_Useages/
-├── README.md
-├── LICENSE
-├── VSCode/
-│   ├── 配置问题/
-│   ├── 插件相关/
-│   └── 快捷键技巧/
-├── IntelliJ/
-│   ├── 性能优化/
-│   ├── 调试技巧/
-│   └── 插件推荐/
-├── Eclipse/
-├── 通用问题/
-└── 资源链接/
-```
+5. **🌡️ 暖通空调系统** (3层)
+   - 温湿度与空气质量管理
 
-## ⚠️ 时效性说明
+6. **🛗 电梯控制系统** (2层)
+   - 智能调度与安全监控
 
-**重要提醒：** 由于软件技术发展迅速，本仓库中的解决方案具有一定的时效性。
+7. **🔐 门禁控制系统** (1层)
+   - 身份认证与访问管理
 
-- 📅 每个解决方案都会标注适用的软件版本和发布时间
-- 🔄 建议在使用前检查是否有更新的解决方案
-- 💡 如果发现过时的内容，欢迎提交Issues或Pull Requests
+8. **🅿️ 智能停车系统** (地下室)
+   - 车位管理与自动收费
 
-## 📖 如何使用
+9. **🖥️ 楼宇自动化系统 (BAS)** (中央控制室)
+   - 系统集成与数据分析
 
-1. **浏览问题分类**：根据您使用的IDE找到对应的目录
-2. **搜索关键词**：使用GitHub的搜索功能快速定位问题
-3. **查看时间戳**：注意解决方案的适用版本和时间
-4. **验证方案**：在您的环境中测试解决方案的有效性
+### 🎨 交互特效
 
-## 🤝 贡献指南
+- **动态动画**: 云朵飘动、电梯移动、太阳能发光等
+- **悬停效果**: 鼠标悬停显示场景信息
+- **点击反馈**: 场景选择时的视觉反馈
+- **响应式设计**: 支持移动端访问
 
-我们欢迎任何形式的贡献！您可以：
+### 📱 用户体验
 
-### 提交问题和解决方案
-- Fork 本仓库
-- 创建新的分支 (`git checkout -b feature/your-solution`)
-- 添加您的问题和解决方案
-- 提交更改 (`git commit -am 'Add: 新增XXX IDE的YYY问题解决方案'`)
-- 推送到分支 (`git push origin feature/your-solution`)
-- 创建 Pull Request
+- **进度追踪**: 可视化的学习进度指示器
+- **任务管理**: 详细的任务描述和难度评级
+- **时间估算**: 每个场景的预计完成时间
+- **欢迎引导**: 首次访问的用户指导
 
-### 内容格式要求
-每个问题解决方案应包含：
-- **问题描述**：清晰描述遇到的问题
-- **环境信息**：IDE版本、操作系统、相关插件等
-- **解决步骤**：详细的解决过程
-- **截图说明**：必要时提供截图
-- **时间戳**：记录解决方案的创建/更新时间
-- **适用版本**：明确适用的软件版本范围
+## 🚀 快速开始
 
-## 📋 模板示例
+### 本地运行
 
-```markdown
-# 问题：VSCode中文显示乱码
+1. 克隆或下载项目文件
+2. 在项目目录下启动HTTP服务器:
 
-## 环境信息
-- IDE: Visual Studio Code v1.XX.X
-- 操作系统: Windows 10
-- 时间: 2024-XX-XX
+```bash
+# 使用Python 3
+python -m http.server 8000
 
-## 问题描述
-在使用VSCode打开中文文件时，出现字符编码错误...
+# 或使用Python 2
+python -m SimpleHTTPServer 8000
 
-## 解决方案
-1. 打开设置 (Ctrl + ,)
-2. 搜索 "encoding"
-3. ...
-
-## 相关链接
-- [官方文档](链接地址)
+# 或使用Node.js (需要安装http-server)
+npx http-server
 ```
 
-## 📞 联系方式
+3. 打开浏览器访问 `http://localhost:8000`
 
-- **维护者**: ODOkai
-- **Email**: [您的邮箱]
-- **GitHub**: [@ODOkai](https://github.com/ODOkai)
+### 文件结构
+
+```
+智慧建筑任务中心/
+├── index.html          # 主页面
+├── styles.css          # 样式文件
+├── script.js           # 交互脚本
+└── README.md           # 项目说明
+```
+
+## 🎓 学习流程
+
+1. **场景选择**: 点击建筑中的任意场景
+2. **任务了解**: 查看详细的任务描述和要求
+3. **开始学习**: 点击"开始任务"进入实践环节
+4. **进度跟踪**: 通过底部进度条查看学习进度
+
+## 🛠️ 技术栈
+
+- **前端**: HTML5, CSS3, JavaScript (ES6+)
+- **动画**: CSS动画 + JavaScript交互
+- **设计**: 响应式设计，支持移动端
+- **兼容性**: 现代浏览器 (Chrome, Firefox, Safari, Edge)
+
+## 🎯 教育价值
+
+- **理论结合实践**: 每个场景都包含理论学习和实践任务
+- **系统性学习**: 覆盖建筑智能化的全面知识体系
+- **循序渐进**: 从基础到高级的学习路径
+- **项目导向**: 通过实际项目提升技能
+
+## 📈 扩展性
+
+这个框架可以轻松扩展:
+
+- 添加更多建筑智能化场景
+- 集成在线学习管理系统
+- 连接实际的硬件设备
+- 添加多媒体学习资源
+
+## 🤝 贡献
+
+欢迎提交Issues和Pull Requests来改进这个项目！
 
 ## 📄 许可证
 
-本项目采用 [MIT License](LICENSE) 开源许可证。
-
-## 🌟 致谢
-
-感谢所有为本仓库贡献内容的开发者们！
-
-## 📊 统计信息
-
-![GitHub repo size](https://img.shields.io/github/repo-size/ODOkai/IDE_Useages)
-![GitHub last commit](https://img.shields.io/github/last-commit/ODOkai/IDE_Useages)
-![GitHub contributors](https://img.shields.io/github/contributors/ODOkai/IDE_Useages)
-
----
-
-**声明**：本仓库中的所有内容仅供参考，使用前请根据您的具体环境进行测试验证。对于因使用本仓库内容而产生的任何问题，维护者不承担责任。
-
-如果这个仓库对您有帮助，请给个 ⭐ Star 支持一下！
+MIT License - 自由使用和修改
